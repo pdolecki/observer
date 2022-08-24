@@ -1,27 +1,5 @@
-# Observer
+Wzorzec obserwator często wykorzystywany, szczególnie przy reaktywnym programowaniu. Zakładam, że większość osób wykorzystuje go na codzień, przy czym może nie mieć świadomości, że właśnie z niego korzystają.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+W naszym przykładzie posiadamy 2 komponenty oraz 1 serwis. Pierwszy komponent – „query” odpowiedzialny jest za przekazywanie danych wprowadzanych do inputa. Dugi komponent – „message” subskrybuje strumień danych w serwisie i na podstawie zwrotek wyświetla odpowiedni element z toDo listy. Serwis zajmuje się wykonywaniem zapytań oraz przekazywaniu ich po otrzymaniu numeru elementu toDo do zrobienia.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Przykład wydaje się wręcz trywialny, nie mniej świtnie obrazuje przykład jak nieświadomie korzystamy z tego(a niekiedy i innych) wzorca – w naszej aplikacji posiadamy strumień danych(dane wprowadzane do inputa), który jest przez nas obserwowany i gdy zachodzą w nim zmiany – regaujemy uruchamiając serwis, a następnie czekając na zwrotkę z zapytania http jakie on wykona.
